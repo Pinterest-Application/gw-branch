@@ -26,6 +26,13 @@ spring:
               filters:
                 - StripPrefix=1
 
+            - id: ms-document
+              uri: lb://ms-document
+              predicates:
+                - Path=/document/**
+              filters:
+                - StripPrefix=1
+
   security:
     oauth2:
       resourceserver:

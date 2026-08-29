@@ -17,6 +17,7 @@ public class SecurityConfig {
                         .pathMatchers("/actuator/**").permitAll()
                         .pathMatchers("/auth/login/**").permitAll()
                         .pathMatchers("/auth/me/**").permitAll()
+                        .pathMatchers("/auth/refresh/**").permitAll()
                         .anyExchange().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
