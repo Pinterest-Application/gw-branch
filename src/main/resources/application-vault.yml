@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    vault:
+      uri: ${VAULT_URI}
+      authentication: APPROLE
+      app-role:
+        role-id: ${VAULT_ROLE_ID}
+        secret-id: ${VAULT_SECRET_ID}
+      kv:
+        enabled: true
+        backend: secret
+        application-name: ${spring.application.name}
+      fail-fast: true

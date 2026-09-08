@@ -1,6 +1,8 @@
 spring:
   application:
     name: gw-branch
+  config:
+    import: "classpath:application-vault.yml,vault://"
 
   cloud:
     gateway:
@@ -37,15 +39,18 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/pin-realm
+          issuer-uri: ${issuer-uri}
 
 server:
   port: 8020
 
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${eureka-server}
 
 management:
   endpoints:
