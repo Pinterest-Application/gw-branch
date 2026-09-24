@@ -19,6 +19,7 @@ ext {
 }
 
 dependencies {
+    implementation 'com.example:lib-exception:0.0.4'
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway-server-webflux'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.boot:spring-boot-starter-security-oauth2-resource-server'
