@@ -46,6 +46,13 @@ spring:
               filters:
                 - StripPrefix=1
 
+            - id: ms-pin
+              uri: lb://ms-pin
+              predicates:
+                - Path=/pin/**
+              filters:
+                - StripPrefix=1
+
   security:
     oauth2:
       resourceserver:
