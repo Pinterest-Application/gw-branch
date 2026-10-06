@@ -39,6 +39,13 @@ spring:
               filters:
                 - StripPrefix=1
 
+            - id: ms-media
+              uri: lb://ms-media
+              predicates:
+                - Path=/media/**
+              filters:
+                - StripPrefix=1
+
   security:
     oauth2:
       resourceserver:
