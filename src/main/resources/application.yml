@@ -53,6 +53,13 @@ spring:
               filters:
                 - StripPrefix=1
 
+            - id: ms-feed
+              uri: lb://ms-feed
+              predicates:
+                - Path=/feed/**
+              filters:
+                - StripPrefix=1
+
   security:
     oauth2:
       resourceserver:
